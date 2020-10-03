@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Fragment, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
+import Routes from './components/routing/Routes';
+
+// import { Provider } from 'react-redux';
+// import { loadProducts } from './actions/product';
+
 import './App.css';
 
-function App() {
+
+const App = () => {
+  useEffect(() => {
+    //get Product
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Fragment>
+        {/* <Navbar /> */}
+        <Switch>
+          <Route component={Routes} />
+        </Switch>
+        {/* <Footer /> */}
+      </Fragment>
+    </Router>
   );
-}
+};
 
 export default App;
