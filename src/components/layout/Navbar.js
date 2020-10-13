@@ -1,8 +1,8 @@
-import React, { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, Button, Row, Col, Divider } from "antd";
+import React from 'react';
+import { Link, Router } from 'react-router-dom';
+import { Menu, Button, Row, Col } from "antd";
 
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import bxlLinkedin from '@iconify/icons-bx/bxl-linkedin';
 import bxlGooglePlus from '@iconify/icons-bx/bxl-google-plus';
 import bxlFacebook from '@iconify/icons-bx/bxl-facebook'; 
@@ -29,10 +29,10 @@ const Navbar = () => {
                 <a href="#">vpdd.ttglobal@gmail.com</a>
               </Col>
             </Row> */}
-            <img className="header-contact-link" src="header-contact-1.png" alt="header-contact"/>
+            <img className="header-contact-link" src="/header-contact-1.png" alt="header-contact"/>
           </Col>
           <Col span={8}>
-            <img className="header-contact-link" src="header-contact-2.png" alt="header-contact"/>
+            <img className="header-contact-link" src="/header-contact-2.png" alt="header-contact"/>
           </Col>
           <Col className="center" span={6}>
             <Row >
@@ -42,54 +42,58 @@ const Navbar = () => {
           </Row>
         </Col>
       </Row>
-      <Row className="header-navbar">
-        <Col span={6} className="logo">
-          {/* img */}
-          <img src="/logo-main.png"/>
+      <Row justify="space-between" className="header-navbar">
+        <Col xs={6} lg={6} className="logo">
+          <Link to="/">
+            <img src="/logo-main.png"/>
+          </Link>
         </Col>
-        <Col span={12}>
+        <Col xs={6} lg={12}>
           <Menu mode="horizontal">
         <Menu.Item>
           <Link to="/">
             Home
           </Link>
         </Menu.Item>
-        <SubMenu title="Product">
+        <SubMenu title="Product" onTitleClick={() => window.location.href= '/product'}>
+          
           <Menu.Item>
-            <Link to="/">
-              
+            <Link to="/product/1">
+              KyO Gloves
             </Link>
           </Menu.Item>
           <Menu.Item>
-            <Link to="/">
-              
+            <Link to="/product/2">
+              Mask N95
             </Link>
           </Menu.Item>
           <Menu.Item>
-            <Link to="/">
-              
+            <Link to="/product/3">
+              <p>Medical Mask 4 Grade</p>
             </Link>
           </Menu.Item>
           <Menu.Item>
-            <Link to="/">
-              
+            <Link to="/product/4">
+            Medical Mask 3 Grade
             </Link>
           </Menu.Item>
         </SubMenu>
         <Menu.Item>
-          <Link to="/">
+          <Link to="/service">
             Services
           </Link>
         </Menu.Item>
         <Menu.Item>
-          <Link to="/">
+          <Link to="/about-us">
             About us
           </Link>
         </Menu.Item>
       </Menu>
         </Col>
-        <Col span={6} className="header-contact-button">
-          <Button size="large" danger>Contact us</Button>
+        <Col xs={0} lg={6} className="header-contact-button">
+          <Link to="/contact">
+            <Button size="large" danger>Contact us</Button>
+          </Link>
         </Col>
       </Row>
     </div>

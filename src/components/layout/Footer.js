@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div class="footer-main">
       <Row>
-        <Col span={9}>
+        <Col xs={12} lg={9} span={9}>
           <b className="footer-title">Address</b>
           <p>
             T & T Global Producing Medical Equipment Factory<br/>
@@ -13,15 +13,17 @@ const Footer = () => {
             Binh Duong Province
           </p>
         </Col>
-        <Col span={5}>
+        <Col xs={12} lg={5} span={5}>
           <b className="footer-title">Contact</b>
           <p>
             info@ttglobal.vn<br/>
             vpdd.ttglobal@gmail.com
           </p>
         </Col>
-        <Col span={6}>
-          <b className="footer-title">Products</b>
+        <Col xs={12} lg={6} span={6}>
+          <Link to="/product">
+            <b className="footer-title">Products</b>
+          </Link>
           <Row>
           <Col span={10}>
             <Link className="footer-link" to="#">The World</Link><br/>
@@ -35,8 +37,10 @@ const Footer = () => {
           </Col>
           </Row>
         </Col>
-        <Col span={4}>
-          <b className="footer-title">Services</b>
+        <Col xs={12} lg={4} span={4}>
+          <Link to="/service">
+            <b className="footer-title">Services</b>
+          </Link>
           <p>
             Air Freight<br/>
             Ocean Freight<br/>
@@ -61,20 +65,20 @@ const Footer = () => {
         </Col>
         <Col span={6}>
           <b className="footer-title">Polices</b><br/>
-          <Link className="footer-link">Career &ensp;</Link>
-          <Link className="footer-link">Download Profile &ensp;</Link>
-          <Link className="footer-link">Privacy Polices &ensp;</Link>
-          <Link className="footer-link">Disclaimer &ensp;</Link>
-          <Link className="footer-link">Our Factory &ensp;</Link>
-          <Link className="footer-link">Quality Assurance &ensp;</Link>
+          <Link to="/career" className="footer-link">Career &ensp;</Link>
+          <Link to="" className="footer-link">Download Profile &ensp;</Link>
+          <Link to="privacy" className="footer-link">Privacy Polices &ensp;</Link>
+          <Link to="disclaimer" className="footer-link">Disclaimer &ensp;</Link>
+          <Link to="factory" className="footer-link">Our Factory &ensp;</Link>
+          <Link to="quality-assurance" className="footer-link">Quality Assurance &ensp;</Link>
         </Col>
       </Row>
       <br/>
       <Row>
         <Col span={16}>
-        <img className="footer-icon" src="footer-twitter-icon.png"/>
-        <img className="footer-icon" src="footer-facebook-icon.png"/>
-        <img className="footer-icon" src="footer-instagram-icon.png"/>
+        <img className="footer-icon" src="/footer-twitter-icon.png"/>
+        <img className="footer-icon" src="/footer-facebook-icon.png"/>
+        <img className="footer-icon" src="/footer-instagram-icon.png"/>
         </Col>
         <Col span={8}>
           <p>
