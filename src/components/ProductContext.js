@@ -12,8 +12,8 @@ const Provider = ( {children} ) => {
       row.image = {};
       row.image.latex = row.image_latex.split(",\n");
       row.image.nitrile = row.image_nitrile.split(",\n");
-      row.image.detail = row.image_detail.split(",\n");
-      
+      row.image.latexDetail = row.image_latex_detail.split(",\n");
+      row.image.nitrileDetail = row.image_nitrile_detail.split(",\n");
       return {
         id: row.id,
         title: row.title,
