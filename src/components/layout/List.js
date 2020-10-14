@@ -25,8 +25,8 @@ const AList = ({ data }) => {
               style={{
                 width: '100%',
                 textAlign: 'center',
-                boxShadow: '0 5px 10px 0 rgba(0,0,0,0.2),0 6px 12px 0 rgba(0,0,0,0.19)'
-            }}
+                boxShadow: '0 5px 10px 0 rgba(0,0,0,0.2),0 6px 12px 0 rgba(0,0,0,0.19)',
+              }}
               cover={
                 thumbnail ? (
                   <div
@@ -48,8 +48,21 @@ const AList = ({ data }) => {
                 )
               }
             >
-              <div className="mb-3">
-                <div style={{ textAlign: 'center', color: 'red', fontSize: '24px' }}><b>{short_title}</b></div>
+              <div
+                className="mb-3"
+                style={{
+                  height: '160px',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  WebkitLineClamp: '7',
+                  WebkitBoxOrient: 'vertical',
+                  lineHeight: 1.5,
+                  display: '-webkit-box'
+                }}
+              >
+                <div style={{ textAlign: 'center', color: 'red', fontSize: '24px' }}>
+                  <b>{short_title}</b>
+                </div>
                 <div style={{ textAlign: 'start' }}>{short_desc}</div>
               </div>
               <Link to={`/product/${id}`}>
