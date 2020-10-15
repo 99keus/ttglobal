@@ -29,8 +29,11 @@ const style = {
 
     },
     image1: {
-      backgroundImage: "url('/home-slidepart-img1.png')",
-      height: '560px'
+      backgroundImage: "url('/home-slidepart-img1.JPG')",
+      height: '560px',
+      backgroundPosition: 'center', /* Center the image */
+      backgroundRepeat: 'no-repeat', /* Do not repeat the image */
+      backgroundSize: 'cover'
     }
   }
 }

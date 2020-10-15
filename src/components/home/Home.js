@@ -19,7 +19,7 @@ const Home = () => {
         color: '#DA3849',
         backgroundColor: 'red',
         height: '2px',
-        width: '200px',
+        width: '300px',
         margin: 'auto',
         minWidth: '50px'
       }
@@ -27,7 +27,10 @@ const Home = () => {
   }
   const contentStyle = {
     height: '390px',
-    backgroundImage: "url('/hero-slider.png')",
+    backgroundImage: "url('/hero-slide.JPG')",
+    backgroundPosition: 'center', /* Center the image */
+    backgroundRepeat: 'no-repeat', /* Do not repeat the image */
+    backgroundSize: 'cover'
   };
   const styleSlide1 = {
     marginTop: 'auto',
@@ -84,8 +87,10 @@ const Home = () => {
         Our <strong>Products</strong>
       </div>
       <OurProduct/>
+      <br/>
       <Divider style={style.divider.red}/>
       <OurPartner/>
+      <br/>
       <Divider style={style.divider.red}/>
       {/* <SlideThree/> */}
       <SlidePart/>
