@@ -8,6 +8,7 @@ import { Layout } from 'antd';
 
 import 'antd/dist/antd.css';
 import './App.css';
+import 'swiper/swiper-bundle.css';
 
 // import { Provider } from 'react-redux';
 // import { loadProducts } from './actions/product';
