@@ -92,7 +92,7 @@ const Home = () => {
       <OurPartner/>
       <br/>
       <Divider style={style.divider.red}/>
-      {/* <SlideThree/> */}
+      <SlideThree/>
       <SlidePart/>
       <CatalogDownload/>
       <NewsLetter/>
