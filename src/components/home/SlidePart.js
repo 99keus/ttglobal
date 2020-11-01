@@ -4,10 +4,10 @@ import { Row, Col, Button, Carousel } from 'antd';
 const style = {
   text:{
     root: {
-      padding: "50px 10vw 0px 10vw"
+      padding: "0 10vw 0px 10vw"
     },
     img: {
-      padding: "25px"
+      padding: "0 25px 25px 25px "
     },
     title: {
       fontSize: "24px",
@@ -23,14 +23,17 @@ const style = {
   },
   slide: {
     root: {
-      padding: '75px 0 50px 0'
+      padding: '0 0 50px 0'
     },
     slide:{
 
     },
     image1: {
-      backgroundImage: "url('/home-slidepart-img1.png')",
-      height: '560px'
+      backgroundImage: "url('/home-slidepart-img1.JPG')",
+      height: '560px',
+      backgroundPosition: 'center', /* Center the image */
+      backgroundRepeat: 'no-repeat', /* Do not repeat the image */
+      backgroundSize: 'cover'
     }
   }
 }

@@ -5,22 +5,26 @@ import { Menu, Button, Row, Col } from "antd";
 import { Icon } from '@iconify/react';
 import bxlLinkedin from '@iconify/icons-bx/bxl-linkedin';
 import bxlGooglePlus from '@iconify/icons-bx/bxl-google-plus';
-import bxlFacebook from '@iconify/icons-bx/bxl-facebook'; 
-const {SubMenu} = Menu;
+import bxlFacebook from '@iconify/icons-bx/bxl-facebook';
+const { SubMenu } = Menu;
+
+const style = {
+  color: '#4F4F4F',
+}
 
 const Navbar = () => {
-  return(
+  return (
     <div className="header">
-      <Row className="header-information"> 
+      <Row className="header-information">
         <Col span={12} className="header-top-left">
-          <Icon className="header-icon-sn" icon={bxlLinkedin} />
-          <Icon className="header-icon-sn" icon={bxlGooglePlus} />
-          <Icon className="header-icon-sn" icon={bxlFacebook} />
+          <Icon className="header-icon-sn" icon={bxlLinkedin} />&nbsp;&nbsp;
+          <Icon className="header-icon-sn" icon={bxlGooglePlus} />&nbsp;&nbsp;
+          <Icon className="header-icon-sn" icon={bxlFacebook} />&nbsp;&nbsp;
         </Col>
         <Col span={12} className="header-top-right">
-        <Row>
-          <Col span={10}>
-            {/* <Row>
+          <Row>
+            <Col span={10}>
+              {/* <Row>
               <Col span={6}>
               <img src="/header-icon-contact.png" alt="contact" />
               </Col>
@@ -29,66 +33,66 @@ const Navbar = () => {
                 <a href="#">vpdd.ttglobal@gmail.com</a>
               </Col>
             </Row> */}
-            <img className="header-contact-link" src="/header-contact-1.png" alt="header-contact"/>
-          </Col>
-          <Col span={8}>
-            <img className="header-contact-link" src="/header-contact-2.png" alt="header-contact"/>
-          </Col>
-          <Col className="center" span={6}>
-            <Row >
-              <img className="header-language" src="/header-language.png" alt="el"/>
-            </Row>
-          </Col>
+              <img className="header-contact-link" src="/header-contact-1.png" alt="header-contact" />
+            </Col>
+            <Col span={8}>
+              <img className="header-contact-link" src="/header-contact-2.png" alt="header-contact" />
+            </Col>
+            <Col className="center" span={6}>
+              <Row >
+                <img className="header-language" src="/header-language.png" alt="el" />
+              </Row>
+            </Col>
           </Row>
         </Col>
       </Row>
       <Row justify="space-between" className="header-navbar">
         <Col xs={6} lg={6} className="logo">
           <Link to="/">
-            <img src="/logo-main.png"/>
+            <img src="/logo-main.png" />
           </Link>
         </Col>
         <Col xs={6} lg={12}>
-          <Menu mode="horizontal">
-        <Menu.Item>
-          <Link to="/">
-            Home
+          <Menu mode="horizontal" style={style.menu}>
+            <Menu.Item>
+              <Link to="/">
+                Home
           </Link>
-        </Menu.Item>
-        <SubMenu title="Product" onTitleClick={() => window.location.href= '/product'}>
-          
-          <Menu.Item>
-            <Link to="/product/1">
-              KyO Gloves
+            </Menu.Item>
+            <SubMenu title="Product" onTitleClick={() => window.location.href = '/product'}>
+
+              <Menu.Item>
+                <Link to="/product/1">
+                  KyO Gloves
             </Link>
-          </Menu.Item>
-          <Menu.Item>
-            <Link to="/product/2">
-              Mask N95
+              </Menu.Item>
+              <Menu.Item>
+                <Link to="/product/2">
+                  Mask N95
             </Link>
-          </Menu.Item>
-          <Menu.Item>
-            <Link to="/product/3">
-              <p>Medical Mask 4 Grade</p>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to="/product/3">
+                  <p>Medical Mask 4 Grade</p>
+                </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to="/product/4">
+                  Medical Mask 3 Grade
             </Link>
-          </Menu.Item>
-          <Menu.Item>
-            <Link to="/product/4">
-            Medical Mask 3 Grade
-            </Link>
-          </Menu.Item>
-        </SubMenu>
-        <Menu.Item>
-          <Link to="/service">
-            Services
+              </Menu.Item>
+            </SubMenu>
+            <Menu.Item>
+              <Link to="/service">
+                Services
           </Link>
-        </Menu.Item>
-        <Menu.Item>
-          <Link to="/about-us">
-            About us
+            </Menu.Item>
+            <Menu.Item>
+              <Link to="/about-us">
+                About us
           </Link>
-        </Menu.Item>
-      </Menu>
+            </Menu.Item>
+          </Menu>
         </Col>
         <Col xs={0} lg={6} className="header-contact-button">
           <Link to="/contact">
@@ -97,6 +101,6 @@ const Navbar = () => {
         </Col>
       </Row>
     </div>
-    )
+  )
 };
 export default Navbar;

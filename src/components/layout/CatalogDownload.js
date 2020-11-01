@@ -25,7 +25,8 @@ const CatalogDownload = () => {
                 margin: '20px 0',
                 width: '100%',
                 height: '60px',
-                fontSize: '1rem'
+                fontSize: '1rem',
+                maxWidth: '300px'
               }}
             >
               Download now <DownloadOutlined />

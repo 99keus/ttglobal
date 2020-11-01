@@ -10,6 +10,7 @@ import AboutUs from '../about-us/about';
 import Factory from '../about-us/factory';
 import Disclaimer from '../simplePage/disclaimer';
 import Privacy from '../simplePage/privacy';
+import QualityAssurance from '../simplePage/QualityAssurance';
 // import NotFound from '../layout/NotFound';
 
 const Routes = () => {
@@ -26,6 +27,7 @@ const Routes = () => {
           <Route exact path='/factory' component={Factory}/>      
           <Route exact path='/disclaimer' component={Disclaimer}/>   
           <Route exact path='/privacy' component={Privacy}/>   
+          <Route exact path='/quality-assurance' component={QualityAssurance}/>   
           {/* <Route exact path='/products' component={} /> */}
           {/* <Route component={NotFound} /> */}
         </Switch>

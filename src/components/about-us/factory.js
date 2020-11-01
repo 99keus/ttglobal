@@ -2,6 +2,10 @@ import React, { Fragment } from 'react';
 import { Row, Col } from 'antd';
 import CatalogDownload from '../layout/CatalogDownload';
 import NewsLetter from '../layout/NewsLetter';
+import SwiperCore, { Pagination, Navigation } from 'swiper';
+import {Swiper, SwiperSlide } from 'swiper/react';
+// import Swiper, {Pagination } from 'swiper';
+
 
 const style= {
   root: {
@@ -20,14 +24,20 @@ const style= {
     text: {
 
     }
+  },
+  slide: {
+    img: {
+      
+    }
   }
 };
 const Factory = () => {
+  SwiperCore.use([Pagination, Navigation]);
 
   return(
     <Fragment>
-      <Row>
-        <img src="/factory-iframe.png"/>
+      <Row justify='center'>
+        <img style={{width: '100%'}} src="/factory-iframe.png"/>
       </Row>
       <Row style={style.text.root} align="middle">
         <b style={style.text.title}>
@@ -45,6 +55,22 @@ const Factory = () => {
           Facilities Image
         </b>
       </Row>
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={3}
+        pagination={{ clickable: true }}
+        navigation= {{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }}
+      >
+        <SwiperSlide><img src="/images/factory-slide-img1.png" style={style.slide.img}/></SwiperSlide>
+        <SwiperSlide><img src="/images/factory-slide-img2.png" style={style.slide.img}/></SwiperSlide>
+        <SwiperSlide><img src="/images/factory-slide-img3.png" style={style.slide.img}/></SwiperSlide>
+        <SwiperSlide><img src="/images/factory-slide-img1.png" style={style.slide.img}/></SwiperSlide>
+        <div className="swiper-button-prev"></div>
+        <div className="swiper-button-next"></div>
+      </Swiper>
       <CatalogDownload/>
       <NewsLetter/>
     </Fragment>

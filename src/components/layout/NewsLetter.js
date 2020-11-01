@@ -30,6 +30,7 @@ const NewsLetter = () => {
           border: '1px solid #ccc',
           borderRadius: '10px',
           background: '#ccc',
+          padding: '20px'
         }}
       />
     </Col>
@@ -44,6 +45,7 @@ const NewsLetter = () => {
           border: '1px solid #ccc',
           borderRadius: '10px',
           background: '#ccc',
+          padding: '20px'
         }}
       />
     </Col>

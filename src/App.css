@@ -34,9 +34,13 @@
   height: 32px;
   /* width: ; */
 }
+<<<<<<< HEAD
 .ant-menu-item>a:hover, ant-menu-item-selected > a {
+=======
+.ant-menu-submenu-selected > a, ant-menu-item-selected > a {
+>>>>>>> 5f3fddd11e3ca15d86ea7c631220beace1634fc2
   color: #da3849!important;
-  border-bottom: 2px solid #da3849!important;
+  /* border-bottom: 2px solid #da3849!important; */
 }
 .ant-menu-item:hover, .ant-menu-submenu:hover, .ant-menu-item-active, .ant-menu-submenu-active, .ant-menu-item-open, .ant-menu-submenu-open, .ant-menu-item-selected, .ant-menu-submenu-selected {
   color: #da3849!important;
