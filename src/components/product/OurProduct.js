@@ -7,7 +7,7 @@ const OurProduct = () => {
 
   return (
     <div style={{ width: '85%', margin: 'auto' }}>
-        <List data={products}></List>
+        <List data={products} hover={window.innerWidth >= 750 }></List>
     </div>
   )
 };

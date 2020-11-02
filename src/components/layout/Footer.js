@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {Row, Col, Divider } from 'antd';
 const Footer = () => {
   return (
-    <div class="footer-main">
+    <div className="footer-main">
       <Row>
         <Col xs={12} lg={9} span={9}>
           <b className="footer-title">Address</b>
