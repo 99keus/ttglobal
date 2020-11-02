@@ -1,69 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-#root{
+#root {
   font-family: 'Poppins', sans-serif;
 }
 
 /* Header CSS */
 
-.header-contact-button{
+.header-contact-button {
   text-align: right;
 }
-.header-information{
+.header-information {
   padding: 0 50px 0 50px;
   border-bottom: 1px solid red;
 }
-.header-navbar{
+.header-navbar {
   padding: 25px 50px 75px 50px;
   /* padding: 50px 0 50px 0; */
 }
-.header-top-left{
+.header-top-left {
   text-align: left;
 }
-.header-top-right{
+.header-top-right {
   text-align: right;
 }
-.header-icon-sn{
+.header-icon-sn {
   width: 24px;
   height: 24px;
 }
-.header-contact-link{
+.header-contact-link {
   margin: 5px;
 }
-.header-language{
+.header-language {
   height: 32px;
   /* width: ; */
 }
-.ant-menu-submenu-selected > a, ant-menu-item-selected > a {
-  color: #da3849!important;
-  /* border-bottom: 2px solid #da3849!important; */
-}
-.ant-menu-item:hover, .ant-menu-submenu:hover, .ant-menu-item-active, .ant-menu-submenu-active, .ant-menu-item-open, .ant-menu-submenu-open, .ant-menu-item-selected, .ant-menu-submenu-selected {
-  color: #da3849!important;
-  border-bottom: 2px solid #da3849!important;
+/* .header-navbar .ant-menu-submenu-selected > a,
+.ant-menu-item-selected > a {
+  color: #da3849 !important;
+  border-bottom: 2px solid #da3849 !important;
+} */
+.header-navbar .ant-menu-item:hover,
+.header-navbar .ant-menu-submenu:hover,
+.header-navbar .ant-menu-item-active,
+.header-navbar .ant-menu-submenu-active,
+.header-navbar .ant-menu-item-open,
+.header-navbar .ant-menu-submenu-open,
+.header-navbar .ant-menu-item-selected,
+.header-navbar .ant-menu-submenu-selected {
+  color: #da3849 !important;
+  border-bottom: 2px solid #da3849 !important;
 }
 
 /* Footer CSS */
-.footer-main{
-  background-color: #0B1C32;
-  color: #E0E0E0;
+.footer-main {
+  background-color: #0b1c32;
+  color: #e0e0e0;
   font-size: 12px;
   line-height: 32px;
   padding: 25px 5vw 15px 5vw;
-  
 }
-.footer-title{
+.footer-title {
   font-size: 24px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
-.footer-link{
+.footer-link {
   font-size: 12px;
-  color: #E0E0E0;
+  color: #e0e0e0;
 }
-.footer-logo{
+.footer-logo {
   max-width: 100%;
 }
-.footer-icon{
+.footer-icon {
   border-radius: 8px;
   margin-left: 5px;
   width: 36px;
@@ -72,21 +79,21 @@
 
 /* Main CSS */
 
-.ant-layout-content{
+.ant-layout-content {
   background-color: #ffffff;
-  padding: 25px 0 25px 0;
+  padding: 25px 0 0 0;
 }
-.center{
+.center {
   text-align: center;
   margin: auto;
 }
 
-.ant-layout-header{
+.ant-layout-header {
   height: 180px;
   background-color: #ffffff;
   padding: 0;
 }
-.ant-menu{
+.ant-menu {
   font-size: 20px;
   text-align: center;
 }
@@ -99,23 +106,31 @@
 
 /* Mobile CSS */
 @media only screen and (max-width: 600px) {
-  .header-information{
+  .header-information {
     display: none;
   }
-  .header-navbar{
+  .header-navbar {
     padding: 25px 0 0 0;
   }
-  .ant-layout-header{
+  .ant-layout-header {
     height: 100px;
   }
 }
 /* Custom CSS */
 
 .custom-submenu {
-  color: #da3849;
+  color: #4f4f4f;
   font-size: 25px;
-  padding: 20px 100px 20px 100px;
-  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05  ), 0 5px 10px 0 rgba(0, 0, 0, 0.05 );
+  background-color: #f9f9f9;
+}
+
+.container-tab-nav .ant-menu-submenu-title {
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-tab-nav .ant-menu-submenu-title:hover {
+  color: #da3849;
+  font-size: 20px;
 }
 
 .custom-table {
@@ -133,8 +148,34 @@ th .ant-table-cell {
   background-color: #f9f9ff;
 }
 
-.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+.container-tab-nav .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
   height: 70px;
+  font-size: 2.3vh;
+  padding: 20px 7.5% !important;
+}
+
+.container-tab-nav .ant-menu {
+  text-align: start;
+  font-size: 20px;
+}
+
+.container-tab-nav.large .ant-menu-sub.ant-menu-inline > .ant-menu-item {
+  padding: 20px 7.5% !important;
+}
+.container-tab-nav.small .ant-menu-sub.ant-menu-inline > .ant-menu-item {
+  padding: 20px 0px !important;
+}
+button:focus, input:focus {
+  outline: none;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently */
 }
 
 .ant-tabs-nav-list {
@@ -144,11 +185,11 @@ th .ant-table-cell {
 
 .ant-tabs-tab {
   width: 50%;
-  height: 90px;
+  height: 8vh;
   display: flex;
   justify-content: center;
   margin-right: 0;
-  font-size: 30px;
+  font-size: 3vh;
   color: white;
   font-weight: bold;
 }
@@ -166,7 +207,7 @@ th .ant-table-cell {
   background-color: white;
   font-weight: bold;
   color: #da3849;
-  box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
 }
 
 .ant-tabs-tab:hover {
@@ -178,7 +219,6 @@ th .ant-table-cell {
   border-bottom: none;
   font-weight: bold;
 }
-
 
 .custom-container-tab {
   display: flex;
@@ -197,10 +237,10 @@ th .ant-table-cell {
 }
 
 .custom-button {
-  width: 300px;
-  height: 60px;
+  width: 22vh;
+  height: 6vh;
   border-radius: 10px;
-  font-size: 25px;
+  font-size: 2vh;
   font-weight: 500;
   color: #6b6b6b;
   border-color: #da3849;
@@ -213,7 +253,7 @@ th .ant-table-cell {
 
 .custom-background {
   width: 100%;
-  height: 520px;
+  height: 45vh; 
   position: relative;
   background-position: center;
   background-repeat: no-repeat;
@@ -225,7 +265,7 @@ th .ant-table-cell {
   bottom: 0;
   display: flex;
   width: 100%;
-  height: 150px;
+  height: 12vh;
   background-color: rgba(235, 235, 235, 0.97);
 }
 
@@ -233,10 +273,11 @@ th .ant-table-cell {
   flex-grow: 3;
   display: flex;
   align-items: center;
-  font-size: 3em;
+  font-size: 3.5vh;
   font-weight: 900;
   color: #da3849;
   padding: 0 15vw;
+  max-width: 60%;
 }
 
 .custom-button-container {
@@ -247,7 +288,8 @@ th .ant-table-cell {
 }
 .custom-content {
   height: auto;
-  padding: 40px 100px;
+  padding: 3vw 6vw;
+  font-size: 1.8vh;
 }
 .product_description_content__detail {
   display: block;
@@ -255,23 +297,33 @@ th .ant-table-cell {
   font-size: 18px;
   line-height: 24px;
   margin-bottom: 40px;
-  height: 300px;
-  -webkit-line-clamp: 10;
+  height: 240px;
+  -webkit-line-clamp: 9;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.5;
 }
-.custom-image {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
 
 .product_description_container__detail {
-  padding: 5vw;
+  padding: 30px 45px;
   position: relative;
   height: 60vh;
+  min-height: 440px;
+}
+
+.container-tab-nav .ant-tabs-nav {
+  height: 100px;
+  position: relative;
+}
+
+.container-tab-nav .ant-tabs > .ant-tabs-nav .ant-tabs-nav-list {
+  position: absolute;
+  bottom: 0;
+}
+
+.image-thumbnail .ant-image-img {
+  object-fit: cover;
 }
 
 .product_description_title__detail {
@@ -301,13 +353,13 @@ th .ant-table-cell {
 }
 
 .product_detail_header {
-  font-size: 50px;
+  font-size: 3.5vh;
   font-weight: bold;
   color: #da3849;
 }
 
 .product_detail_header__b {
-  font-size: 30px;
+  font-size: 3.5vh;
   color: #101d78;
 }
 
@@ -322,6 +374,7 @@ th .ant-table-cell {
     url('/kyo_2_1.png');
   background-position: center;
   background-repeat: no-repeat;
+  background-size: contain;
   justify-content: center;
   align-items: center;
 }
@@ -335,8 +388,16 @@ th .ant-table-cell {
   justify-content: center;
   align-items: center;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 2vh;
   line-height: 30px;
+}
+
+.custom-card {
+  transition: all 0.2s ease-in-out;
+}
+
+.large.custom-card:hover {
+  transform: scale(1.05);
 }
 
 .unavailable-text {
@@ -352,10 +413,9 @@ th .ant-table-cell {
     font-size: em;
     font-weight: 900;
     color: #da3849;
-    padding: 0 5px;
-    max-width: 50%;
+    padding: 0 15px;
   }
-  .custom-button{
-    width: 90%;
+  .custom-button {
+    width: 80%;
   }
 }

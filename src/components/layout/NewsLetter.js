@@ -1,5 +1,5 @@
 import { Col, Row } from 'antd';
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const NewsLetter = () => {
   return(

@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import service from './service.json';
-import { Image } from 'antd';
-import { DownloadOutlined, SendOutlined } from '@ant-design/icons';
 import CatalogDownload from '../layout/CatalogDownload';
 import NewsLetter from '../layout/NewsLetter';
 

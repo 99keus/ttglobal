@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Button from '../layout/Button';
 import List from '../layout/List';
@@ -14,27 +14,48 @@ const { SubMenu } = Menu;
 const ProductDetail = () => {
   const products = useContext(ProductContext);
   const [tab, setTab] = useState('nitrile');
-  console.log('---- Products: ', products);
-
+  const [size, setSize] = useState(window.innerWidth >= 750);
   let { id: productId } = useParams();
   const { title, description, thumbnail, image } = products.find((p) => p.id === productId) || {};
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      if ((window.innerWidth >= 750) !== size) {
+        setSize(!size);
+      }
+    });
+    return () => {
+      window.removeEventListener('resize', () => {
+        if ((window.innerWidth >= 750) !== size) {
+          setSize(!size);
+        }
+      });
+    };
+  });
+
+  const chunk = (images) => {
+    return _.chunk(images, size ? 4 : 1).map((g, index) => {
+      return (
+        <div key={index}>
+          {g.map((i, index) => {
+            return <Image key={index} src={i} width={260} height={224} className="item" />;
+          })}
+        </div>
+      );
+    });
+  };
   const handleOnChange = (e) => {
     if (e !== tab) {
       setTab(e);
     }
   };
+  console.log('render');
   return (
     <div>
       <Row>
         <Col xs={24} lg={12}>
           {thumbnail ? (
-            <div
-              style={{
-                height: '60vh',
-                backgroundImage: `url(${thumbnail})`,
-              }}
-              className="custom-image"
-            ></div>
+            <Image height="60vh" width="100%" src={thumbnail} className="image-thumbnail" />
           ) : (
             <div className="unavailable-image" style={{ height: '60vh' }}>
               <div className="unavailable-image-blur">This product is temporarily unavailable</div>
@@ -49,7 +70,7 @@ const ProductDetail = () => {
             <div className="product_description_content__detail">{description}</div>
             <div style={{ position: 'absolute', bottom: '40px', left: '60px' }}>
               {image ? (
-                <Button width={250} height={50} borderRadius={10} fontSize={20} fontWeight="bold">
+                <Button height={50} borderRadius={10} fontSize={20} fontWeight="bold">
                   Contact us
                 </Button>
               ) : (
@@ -60,36 +81,16 @@ const ProductDetail = () => {
         </Col>
       </Row>
       {image ? (
-        <div>
+        <div className={size ? 'container-tab-nav large' : 'container-tab-nav small'}>
           <Tabs defaultActiveKey="nitrile" className="mt-3" onChange={handleOnChange}>
             <TabPane tab="Nitrile" key="nitrile">
-              <Panner>
-                {_.chunk(image.nitrile, 4).map((g) => {
-                  return (
-                    <div>
-                      {g.map((i) => {
-                        return <Image src={i} width={300} height={280} className="item" />;
-                      })}
-                    </div>
-                  );
-                })}
-              </Panner>
+              <Panner>{chunk(image.nitrile)}</Panner>
             </TabPane>
             <TabPane tab="Latex" key="latex">
-              <Panner>
-              {_.chunk(image.latex, 4).map((g) => {
-                  return (
-                    <div>
-                      {g.map((i) => {
-                        return <Image src={i} width={300} height={280} className="item" />;
-                      })}
-                    </div>
-                  );
-                })}
-              </Panner>
+              <Panner>{chunk(image.latex)}</Panner>
             </TabPane>
           </Tabs>
-          <div className="product_detail_header header_middle mt-5 mb-5">Products detail</div>
+          <div className="product_detail_header header_middle mt-3 mb-3">Product details</div>
           {tab === 'nitrile' ? (
             <Menu theme="light" style={{ width: '100%' }} mode="inline">
               <SubMenu key="sub1" title="WIDTH & LENGTH" className="custom-submenu">
@@ -140,14 +141,14 @@ const ProductDetail = () => {
         </div>
       ) : null}
       <div style={{ width: '85%', margin: 'auto' }}>
-        <div className="product_detail_header__b mt-3">
+        <div className={`product_detail_header__b mt-3 ${size ? '' : 'header_middle'}`}>
           Other <strong>Products</strong>
         </div>
         <div className="mt-3">
-          <List data={products.filter((p) => p.id !== productId)}></List>
+          <List data={products.filter((p) => p.id !== productId)} hover={size}></List>
         </div>
       </div>
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: 'relative', marginTop: '20px' }}>
         <div className="product_detail_header__b header_middle">
           Our <strong>Partners</strong>
         </div>
@@ -158,8 +159,8 @@ const ProductDetail = () => {
         />
         <div style={{ padding: '30px' }}>
           <Panner>
-            <Image src="/logo-partner.png" width={150} />
-            <Image src="/logo-partner.png" width={150} />
+            <Image src="/logo-partner.png" width={100} />
+            <Image src="/logo-partner.png" width={100} />
           </Panner>
         </div>
       </div>

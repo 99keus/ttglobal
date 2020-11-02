@@ -3,11 +3,19 @@ import { Card, List } from 'antd';
 import { Link } from 'react-router-dom';
 import Button from './Button';
 
-const AList = ({ data }) => {
+const style = {
+  card: {
+    width: '100%',
+    textAlign: 'center',
+    boxShadow: '0 5px 10px 0 rgba(0,0,0,0.2),0 6px 12px 0 rgba(0,0,0,0.19)',
+  }
+}
+
+const AList = ({ data, hover }) => {
   return (
     <List
       grid={{
-        gutter: 32,
+        gutter: 40,
         xs: 1,
         sm: 1,
         md: 1,
@@ -22,25 +30,22 @@ const AList = ({ data }) => {
           <List.Item>
             <Card
               hoverable
-              style={{
-                width: '100%',
-                textAlign: 'center',
-                boxShadow: '0 5px 10px 0 rgba(0,0,0,0.2),0 6px 12px 0 rgba(0,0,0,0.19)',
-              }}
+              style={style.card}
+              className={hover ? 'custom-card large' : 'custom-card'}
               cover={
                 thumbnail ? (
                   <div
                     style={{
                       backgroundImage: `url(${thumbnail})`,
                       width: '100%',
-                      height: '250px',
+                      height: '214px',
                       backgroundSize: 'cover',
                       backgroundRepeat: 'no-repeat',
                       backgroundPosition: 'center',
                     }}
                   ></div>
                 ) : (
-                  <div className="unavailable-image" style={{ height: '250px' }}>
+                  <div className="unavailable-image" style={{ height: '214px' }}>
                     <div className="unavailable-image-blur">
                       This product is temporarily unavailable
                     </div>
@@ -51,16 +56,16 @@ const AList = ({ data }) => {
               <div
                 className="mb-3"
                 style={{
-                  height: '160px',
+                  height: '90px',
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
-                  WebkitLineClamp: '7',
+                  WebkitLineClamp: '4',
                   WebkitBoxOrient: 'vertical',
                   lineHeight: 1.5,
                   display: '-webkit-box'
                 }}
               >
-                <div style={{ textAlign: 'center', color: 'red', fontSize: '24px' }}>
+                <div style={{ textAlign: 'center', color: '#DA3849', fontSize: '20px' }}>
                   <b>{short_title}</b>
                 </div>
                 <div style={{ textAlign: 'start' }}>{short_desc}</div>
