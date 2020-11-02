@@ -13,14 +13,14 @@ const About = () => {
     title: {
       // textAlign: 'center',
       color: '#DA3849',
-      fontSize : '24px',
-      lineHeight : '36px'
+      fontSize : '20px',
+      lineHeight : '30px'
     },
     text: {
       // textAlign: 'center',
       color: '#333333',
-      fontSize : '16px',
-      lineHeight : '24px'
+      fontSize : '14px',
+      lineHeight : '20px'
     },
     button: {
       border: '1px solid #DA3849',

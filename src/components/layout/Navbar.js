@@ -9,6 +9,11 @@ import bxlFacebook from '@iconify/icons-bx/bxl-facebook';
 const { SubMenu } = Menu;
 
 const style = {
+  menu: {
+    borderBottom: "none",
+  },
+  submenu: {
+  },
   color: '#4F4F4F',
 }
 
@@ -57,19 +62,19 @@ const Navbar = () => {
             <Menu.Item>
               <Link to="/">
                 Home
-          </Link>
+              </Link>
             </Menu.Item>
-            <SubMenu title="Product" onTitleClick={() => window.location.href = '/product'}>
+            <SubMenu title="Product" style={style.submenu} onTitleClick={() => window.location.href = '/product'}>
 
               <Menu.Item>
                 <Link to="/product/1">
                   KyO Gloves
-            </Link>
+                </Link>
               </Menu.Item>
               <Menu.Item>
                 <Link to="/product/2">
                   Mask N95
-            </Link>
+                </Link>
               </Menu.Item>
               <Menu.Item>
                 <Link to="/product/3">
@@ -79,13 +84,13 @@ const Navbar = () => {
               <Menu.Item>
                 <Link to="/product/4">
                   Medical Mask 3 Grade
-            </Link>
+                </Link>
               </Menu.Item>
             </SubMenu>
             <Menu.Item>
               <Link to="/service">
                 Services
-          </Link>
+              </Link>
             </Menu.Item>
             <Menu.Item>
               <Link to="/about-us">

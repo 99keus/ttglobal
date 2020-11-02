@@ -14,7 +14,7 @@
   border-bottom: 1px solid red;
 }
 .header-navbar{
-  padding: 25px 50px 75px 50px;
+  padding: 25px 50px 25px 50px;
   /* padding: 50px 0 50px 0; */
 }
 .header-top-left{
@@ -42,6 +42,10 @@
   color: #da3849!important;
   border-bottom: 2px solid #da3849!important;
 }
+.ant-menu-submenu > .ant-menu {
+  text-align: start;
+  font-size: 14px;
+}
 
 /* Footer CSS */
 .footer-main{
@@ -53,7 +57,7 @@
   
 }
 .footer-title{
-  font-size: 24px;
+  font-size: 22px;
   color: #FFFFFF;
 }
 .footer-link{
@@ -74,7 +78,7 @@
 
 .ant-layout-content{
   background-color: #ffffff;
-  padding: 25px 0 25px 0;
+  padding: 0 0 25px 0;
 }
 .center{
   text-align: center;
@@ -87,7 +91,7 @@
   padding: 0;
 }
 .ant-menu{
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
 }
 
@@ -113,7 +117,7 @@
 
 .custom-submenu {
   color: #da3849;
-  font-size: 25px;
+  font-size : 22px;
   padding: 20px 100px 20px 100px;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05  ), 0 5px 10px 0 rgba(0, 0, 0, 0.05 );
 }
@@ -148,7 +152,7 @@ th .ant-table-cell {
   display: flex;
   justify-content: center;
   margin-right: 0;
-  font-size: 30px;
+  font-size : 25px;
   color: white;
   font-weight: bold;
 }
@@ -200,7 +204,7 @@ th .ant-table-cell {
   width: 300px;
   height: 60px;
   border-radius: 10px;
-  font-size: 25px;
+  font-size : 22px;
   font-weight: 500;
   color: #6b6b6b;
   border-color: #da3849;
@@ -275,7 +279,7 @@ th .ant-table-cell {
 }
 
 .product_description_title__detail {
-  font-size: 36px;
+  font-size : 30px;
   font-weight: bold;
   color: #da3849;
 }
@@ -301,13 +305,13 @@ th .ant-table-cell {
 }
 
 .product_detail_header {
-  font-size: 50px;
+  font-size : 40px;
   font-weight: bold;
   color: #da3849;
 }
 
 .product_detail_header__b {
-  font-size: 30px;
+  font-size : 25px;
   color: #101d78;
 }
 
@@ -335,13 +339,13 @@ th .ant-table-cell {
   justify-content: center;
   align-items: center;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 30px;
 }
 
 .unavailable-text {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 30px;
   color: #828282;
 }
