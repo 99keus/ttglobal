@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="footer-main">
       <Row>
-        <Col xs={12} lg={9} span={9}>
+        <Col xs={24} lg={9}>
           <b className="footer-title">Address</b>
           <p>
             T & T Global Producing Medical Equipment Factory<br/>
@@ -13,14 +13,14 @@ const Footer = () => {
             Binh Duong Province
           </p>
         </Col>
-        <Col xs={12} lg={5} span={5}>
+        <Col xs={24} lg={5}>
           <b className="footer-title">Contact</b>
           <p>
             info@ttglobal.vn<br/>
             vpdd.ttglobal@gmail.com
           </p>
         </Col>
-        <Col xs={12} lg={6} span={6}>
+        <Col xs={0} lg={6}>
           <Link to="/product">
             <b className="footer-title">Products</b>
           </Link>
@@ -37,7 +37,7 @@ const Footer = () => {
           </Col>
           </Row>
         </Col>
-        <Col xs={12} lg={4} span={4}>
+        <Col xs={0} lg={4}>
           <Link to="/service">
             <b className="footer-title">Services</b>
           </Link>
@@ -50,10 +50,7 @@ const Footer = () => {
       </Row>
       <Divider style={{backgroundColor: "#E0E0E0"}}/>
       <Row>
-        <Col span={3}>
-          <img className="footer-logo" src="/Footer-main-logo.png"/>
-        </Col>
-        <Col span={15}>
+        <Col xs={24} lg={18}>
           <img className="footer-logo" src="/footer-logo-partner-1.png"/>
           <img className="footer-logo" src="/footer-logo-partner-2.png"/>
           <img className="footer-logo" src="/footer-logo-partner-3.png"/>
@@ -63,7 +60,7 @@ const Footer = () => {
           <img className="footer-logo" src="/footer-logo-partner-7.png"/>
           <img className="footer-logo" src="/footer-logo-partner-8.png"/>
         </Col>
-        <Col span={6}>
+        <Col className="footer-polices" xs={24} lg={6}>
           <b className="footer-title">Polices</b><br/>
           <Link to="/career" className="footer-link">Career &ensp;</Link>
           <Link to="" className="footer-link">Download Profile &ensp;</Link>
@@ -75,12 +72,12 @@ const Footer = () => {
       </Row>
       <br/>
       <Row>
-        <Col span={16}>
+        <Col xs={24} lg={16}>
         <img className="footer-icon" src="/footer-twitter-icon.png"/>
         <img className="footer-icon" src="/footer-facebook-icon.png"/>
         <img className="footer-icon" src="/footer-instagram-icon.png"/>
         </Col>
-        <Col span={8}>
+        <Col xs={24} lg={8}>
           <p>
             @All rights reserved | This template is made by T&T Global
           </p>

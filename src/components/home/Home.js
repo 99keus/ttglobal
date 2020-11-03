@@ -20,7 +20,7 @@ const Home = () => {
         backgroundColor: 'red',
         height: '2px',
         width: '300px',
-        margin: 'auto',
+        margin: '10px auto',
         minWidth: '50px'
       }
     }
@@ -93,7 +93,10 @@ const Home = () => {
       <br/>
       <Divider style={style.divider.red}/>
       <SlideThree/>
+      <Divider style={style.divider.red}/>
+      <br/>
       <SlidePart/>
+      <br/>
       <CatalogDownload/>
       <NewsLetter/>
     </Fragment>

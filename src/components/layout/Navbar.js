@@ -1,21 +1,53 @@
-import React from 'react';
-import { Link, Router } from 'react-router-dom';
-import { Menu, Button, Row, Col } from "antd";
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, Button, Row, Col, Layout } from "antd";
 
 import { Icon } from '@iconify/react';
 import bxlLinkedin from '@iconify/icons-bx/bxl-linkedin';
 import bxlGooglePlus from '@iconify/icons-bx/bxl-google-plus';
 import bxlFacebook from '@iconify/icons-bx/bxl-facebook';
-const { SubMenu } = Menu;
 
-const style = {
-  color: '#4F4F4F',
-}
+import {
+  MenuUnfoldOutlined,
+  MenuFoldOutlined,
+} from '@ant-design/icons';
+
+const { SubMenu } = Menu;
+const { Header } = Layout;
 
 const Navbar = () => {
+  const [fullNavbar, setFullNavbar] = useState(false);
+  
+  const location = useLocation();
+  console.log("react-router-dom", location.pathname);
+
+  useEffect(() => {
+    if(location.pathname == "/"){
+      setFullNavbar(true);
+    }else{
+      setFullNavbar(false);
+    }
+  }, [fullNavbar])
+
+  const style = {
+    header: {
+      height: fullNavbar ? "180px" : "80px"
+    },
+    menu: {
+      borderBottom: "none",
+    },
+    submenu: {
+    },
+    navbarInfo: fullNavbar ? "": {display: 'none'},
+    navbarMenu: fullNavbar ? {padding: '25px 5vw'} : {padding: '0 5vw'},
+  };
+
+  console.log("wtf", fullNavbar, location.pathname == "/");
+
   return (
+    <Header style={style.header}>
     <div className="header">
-      <Row className="header-information">
+      <Row style={style.navbarInfo} className="header-information">
         <Col span={12} className="header-top-left">
           <Icon className="header-icon-sn" icon={bxlLinkedin} />&nbsp;&nbsp;
           <Icon className="header-icon-sn" icon={bxlGooglePlus} />&nbsp;&nbsp;
@@ -46,30 +78,37 @@ const Navbar = () => {
           </Row>
         </Col>
       </Row>
-      <Row justify="space-between" className="header-navbar">
+      <Row style={style.navbarMenu} justify="space-between">
         <Col xs={6} lg={6} className="logo">
           <Link to="/">
             <img src="/logo-main.png" />
           </Link>
         </Col>
         <Col xs={6} lg={12}>
-          <Menu mode="horizontal" style={style.menu}>
+          <Menu
+            mode="horizontal" style={style.menu}
+            overflowedIndicator={
+              <MenuUnfoldOutlined
+                style={{fontSize: '20px', color: '#DA3849'}}
+              />
+            }
+          >
             <Menu.Item>
               <Link to="/">
                 Home
-          </Link>
+              </Link>
             </Menu.Item>
-            <SubMenu title="Product" onTitleClick={() => window.location.href = '/product'}>
+            <SubMenu title="Product" style={style.submenu} onTitleClick={() => window.location.href = '/product'}>
 
               <Menu.Item>
                 <Link to="/product/1">
                   KyO Gloves
-            </Link>
+                </Link>
               </Menu.Item>
               <Menu.Item>
                 <Link to="/product/2">
                   Mask N95
-            </Link>
+                </Link>
               </Menu.Item>
               <Menu.Item>
                 <Link to="/product/3">
@@ -79,13 +118,13 @@ const Navbar = () => {
               <Menu.Item>
                 <Link to="/product/4">
                   Medical Mask 3 Grade
-            </Link>
+                </Link>
               </Menu.Item>
             </SubMenu>
             <Menu.Item>
               <Link to="/service">
                 Services
-          </Link>
+              </Link>
             </Menu.Item>
             <Menu.Item>
               <Link to="/about-us">
@@ -101,6 +140,7 @@ const Navbar = () => {
         </Col>
       </Row>
     </div>
+    </Header>
   )
 };
 export default Navbar;
