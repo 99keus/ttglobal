@@ -22,9 +22,7 @@ const App = () => {
     <Provider>
       <Router>
         <Layout>
-          <Header>
-            <Navbar />
-          </Header>
+          <Navbar />
           <Content>
             <Switch>
               <Route component={Routes} />

@@ -5,7 +5,7 @@ import { DownloadOutlined } from '@ant-design/icons';
 const CatalogDownload = () => {
 
   return(
-    <Row justify="center" style={{ marginTop: '50px' }}>
+    <Row justify="center" style={{ marginTop: '0px' }}>
       <Col xs={20} lg={18}
         style={{
           margin: 'auto',
@@ -24,9 +24,9 @@ const CatalogDownload = () => {
               style={{
                 margin: '20px 0',
                 width: '100%',
-                height: '60px',
+                height: '50px',
                 fontSize: '1rem',
-                maxWidth: '300px'
+                maxWidth: '200px'
               }}
             >
               Download now <DownloadOutlined />

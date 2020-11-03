@@ -39,7 +39,7 @@ const Service = () => {
           </div>
         );
       })}
-
+      <br/>
       <CatalogDownload/>
       <NewsLetter/>
     </div>

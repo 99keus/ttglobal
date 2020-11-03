@@ -3,6 +3,7 @@ import { Image, Divider } from 'antd';
 import Panner from '../layout/Panner';
 import List from '../layout/List';
 import { ProductContext } from '../ProductContext';
+import OurPartner from '../layout/OurPartner';
 
 const style = {
   root: { backgroundColor: '#FFFBFC', borderTop: '1px solid #DA3849', paddingTop: '20px' },
@@ -40,30 +41,14 @@ const Product = () => {
         <div style={style.title}>
           Our <strong>Products</strong>
         </div>
-        <div style={style.subTitle}>
-          <b>Medical Equipment</b>
-        </div>
+        <br/>
         <div>
           <List data={products} hover={window.innerWidth >=750}></List>
         </div>
       </div>
       <Divider style={style.panner} />
-      <div style={{ position: 'relative' }}>
-        <div className="product_detail_header__b header_middle">
-          Our <strong>Partners</strong>
-        </div>
-        <img
-          src="/logo-circle.png"
-          style={style.image}
-          alt=""
-        />
-        <div style={{ padding: '30px' }}>
-          <Panner>
-            <Image src="/logo-partner.png" width={150} />
-            <Image src="/logo-partner.png" width={150} />
-          </Panner>
-        </div>
-      </div>
+
+      <OurPartner/>
     </div>
   );
 };

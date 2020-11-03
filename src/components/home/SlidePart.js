@@ -11,8 +11,11 @@ const style = {
     },
     title: {
       fontSize: "24px",
-      lineHeight: "36px",
+      lineHeight: "30px",
       color: "#BE0B31"
+    },
+    text: {
+      fontSize: "13px"
     },
     button: {
       border: '1px solid #DA3849',
@@ -30,7 +33,7 @@ const style = {
     },
     image1: {
       backgroundImage: "url('/home-slidepart-img1.JPG')",
-      height: '560px',
+      height: '450px',
       backgroundPosition: 'center', /* Center the image */
       backgroundRepeat: 'no-repeat', /* Do not repeat the image */
       backgroundSize: 'cover'
@@ -67,7 +70,7 @@ const SlidePart = () => {
           </Button>
         </div>
       </Col>
-      <Col xs={24} lg={8} style={style.slide.root}>
+      <Col xs={0} lg={8} style={style.slide.root}>
         <Carousel autoplay>
           <div>
             <div style={style.slide.image1}></div>
