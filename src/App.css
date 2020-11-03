@@ -197,7 +197,7 @@ button:focus, input:focus {
   display: flex;
   justify-content: center;
   margin-right: 0;
-  font-size: 3vh;
+  font-size : 25px;
   color: white;
   font-weight: bold;
 }
@@ -248,7 +248,7 @@ button:focus, input:focus {
   width: 22vh;
   height: 6vh;
   border-radius: 10px;
-  font-size: 2vh;
+  font-size : 22px;
   font-weight: 500;
   color: #6b6b6b;
   border-color: #da3849;
@@ -361,13 +361,13 @@ button:focus, input:focus {
 }
 
 .product_detail_header {
-  font-size: 3.5vh;
+  font-size : 40px;
   font-weight: bold;
   color: #da3849;
 }
 
 .product_detail_header__b {
-  font-size: 3.5vh;
+  font-size : 25px;
   color: #101d78;
 }
 
@@ -396,7 +396,7 @@ button:focus, input:focus {
   justify-content: center;
   align-items: center;
   font-weight: 500;
-  font-size: 2vh;
+  font-size: 18px;
   line-height: 30px;
 }
 
