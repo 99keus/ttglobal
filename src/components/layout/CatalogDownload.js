@@ -1,6 +1,6 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import { Image, Row, Col } from 'antd';
-import { DownloadOutlined, SendOutlined } from '@ant-design/icons';
+import { DownloadOutlined } from '@ant-design/icons';
 
 const CatalogDownload = () => {
 
@@ -20,7 +20,7 @@ const CatalogDownload = () => {
               Download our <strong>Catalog & profile</strong>
             </div>
             <button
-              className="custom-button active"
+              className="custom-button active noselect"
               style={{
                 margin: '20px 0',
                 width: '100%',
