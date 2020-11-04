@@ -10,7 +10,8 @@ const AButton = (props) => {
     borderRadius,
     fontSize,
     fontWeight,
-    minWidth: '150px'
+    minWidth: '120px',
+    maxWidth: '200px'
     // borderRadius: '10px',
     // fontSize: '30px',
     // fontWeight: 'bold',

@@ -71,7 +71,7 @@ const AList = ({ data, hover }) => {
                 <div style={{ textAlign: 'start' }}>{short_desc}</div>
               </div>
               <Link to={`/product/${id}`}>
-                <Button width={'15vw'} height={35} borderRadius={30}>
+                <Button width={'70%'} height={35} borderRadius={30}>
                   Learn more
                 </Button>{' '}
               </Link>

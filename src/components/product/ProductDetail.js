@@ -70,7 +70,7 @@ const ProductDetail = () => {
             <div className="product_description_content__detail">{description}</div>
             <div style={{ position: 'absolute', bottom: '40px', left: '60px' }}>
               {image ? (
-                <Button height={50} borderRadius={10} fontSize={20} fontWeight="bold">
+                <Button height={40} borderRadius={10} fontSize={"1rem"} fontWeight="bold">
                   Contact us
                 </Button>
               ) : (
@@ -141,7 +141,7 @@ const ProductDetail = () => {
         </div>
       ) : null}
       <div style={{ width: '85%', margin: 'auto' }}>
-        <div className={`product_detail_header__b mt-3 ${size ? '' : 'header_middle'}`}>
+        <div className={`product_detail_header__b header_middle mt-3 ${size ? '' : 'header_middle'}`}>
           Other <strong>Products</strong>
         </div>
         <div className="mt-3">

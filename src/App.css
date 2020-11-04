@@ -248,7 +248,7 @@ button:focus, input:focus {
   width: 22vh;
   height: 6vh;
   border-radius: 10px;
-  font-size : 22px;
+  font-size : 1rem;
   font-weight: 500;
   color: #6b6b6b;
   border-color: #da3849;
@@ -297,13 +297,13 @@ button:focus, input:focus {
 .custom-content {
   height: auto;
   padding: 3vw 6vw;
-  font-size: 1.8vh;
+  font-size: 1em;
 }
 .product_description_content__detail {
   display: block;
   display: -webkit-box;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 16px;
+  line-height: 20px;
   margin-bottom: 40px;
   height: 240px;
   -webkit-line-clamp: 9;
@@ -361,7 +361,7 @@ button:focus, input:focus {
 }
 
 .product_detail_header {
-  font-size : 40px;
+  font-size : 30px;
   font-weight: bold;
   color: #da3849;
 }
