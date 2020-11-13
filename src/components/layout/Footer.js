@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="footer-main">
       <Row>
-        <Col xs={24} lg={9}>
+        <Col xs={24} lg={10}>
           <b className="footer-title">Address</b>
           <p>
             T & T Global Producing Medical Equipment Factory<br/>
@@ -13,7 +13,7 @@ const Footer = () => {
             Binh Duong Province
           </p>
         </Col>
-        <Col xs={24} lg={5}>
+        <Col xs={24} lg={4}>
           <b className="footer-title">Contact</b>
           <p>
             info@ttglobal.vn<br/>
@@ -26,14 +26,12 @@ const Footer = () => {
           </Link>
           <Row>
           <Col span={10}>
-            <Link className="footer-link" to="#">The World</Link><br/>
-            <Link className="footer-link" to="#">Superieur GB</Link><br/>
-            <Link className="footer-link" to="#">Kyo</Link><br/>
+            <Link className="footer-link" to="/product/1">Kyo</Link><br/>
+            <Link className="footer-link" to="/product/2">Mask N95</Link><br/>
           </Col>
           <Col span={14}>
-            <Link className="footer-link" to="#">Medical Mask 3 Grade</Link><br/>
-            <Link className="footer-link" to="#">Medical Mask 4 Grade</Link><br/>
-            <Link className="footer-link" to="#">Mask N95</Link><br/>
+            <Link className="footer-link" to="/product/3">Medical Mask 3 Grade</Link><br/>
+            <Link className="footer-link" to="/product/4">Medical Mask 4 Grade</Link><br/>
           </Col>
           </Row>
         </Col>
@@ -77,9 +75,9 @@ const Footer = () => {
         <img className="footer-icon" src="/footer-facebook-icon.png"/>
         <img className="footer-icon" src="/footer-instagram-icon.png"/>
         </Col>
-        <Col xs={24} lg={8}>
+        <Col style={{textAlign: "end"}} xs={24} lg={8}>
           <p>
-            @All rights reserved | This template is made by T&T Global
+          Copyright ©2020 All rights reserved
           </p>
         </Col>
       </Row>

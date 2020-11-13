@@ -17,7 +17,7 @@ const CatalogDownload = () => {
         <Row justify="space-betwwen">
           <Col xs={20} lg={12}>
             <div style={{ fontSize: '24px' }}>
-              Download our <strong>Catalog & profile</strong>
+              Download<strong> our Profile</strong>
             </div>
             <button
               className="custom-button active noselect"

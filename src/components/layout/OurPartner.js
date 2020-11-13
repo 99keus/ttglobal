@@ -9,7 +9,9 @@ const OurPartner = () => {
       width: "70%"
     },
     panner: {
-      height: '120px'
+      // height: '120px',
+      minHeight: '120px'
+      // margin: 'auto'
     }
   };
 
@@ -28,9 +30,9 @@ const OurPartner = () => {
         Our <strong>Partners</strong>
       </div>
       <div style={style.panner}>
-        <Panner>
-          <Image src="/logo-partner.png" style={style.img} />
-          <Image src="/logo-partner.png" style={style.img} />
+        <Panner style={{minHeight: '120px'}}>
+          <Image src="/logo-main.png" style={style.img} />
+          <Image src="/logo-1.jpg" style={style.img} />
         </Panner>
       </div>
     </Fragment>

@@ -11,6 +11,12 @@ import _ from 'lodash';
 const { TabPane } = Tabs;
 const { SubMenu } = Menu;
 
+const style = {
+  imgThumbnail : {
+    
+  }
+}
+
 const ProductDetail = () => {
   const products = useContext(ProductContext);
   const [tab, setTab] = useState('nitrile');
@@ -55,9 +61,9 @@ const ProductDetail = () => {
       <Row>
         <Col xs={24} lg={12}>
           {thumbnail ? (
-            <Image height="60vh" width="100%" src={thumbnail} className="image-thumbnail" />
+            <Image style={{padding: '25px'}} height="100%" width="100%" src={thumbnail} className="image-thumbnail" />
           ) : (
-            <div className="unavailable-image" style={{ height: '60vh' }}>
+            <div className="unavailable-image" style={{ height: '100%' }}>
               <div className="unavailable-image-blur">This product is temporarily unavailable</div>
             </div>
           )}
@@ -67,7 +73,7 @@ const ProductDetail = () => {
             <div className="product_description_title__detail">
               <b>{title}</b>
             </div>
-            <div className="product_description_content__detail">{description}</div>
+            <div className="product_description_content__detail"><p>{description}</p></div>
             <div style={{ position: 'absolute', bottom: '40px', left: '60px' }}>
               {image ? (
                 <Button height={40} borderRadius={10} fontSize={"1rem"} fontWeight="bold">
@@ -144,7 +150,7 @@ const ProductDetail = () => {
         <div className={`product_detail_header__b header_middle mt-3 ${size ? '' : 'header_middle'}`}>
           Other <strong>Products</strong>
         </div>
-        <div className="mt-3">
+        <div className="mt-3" >
           <List data={products.filter((p) => p.id !== productId)} hover={size}></List>
         </div>
       </div>

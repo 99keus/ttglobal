@@ -427,3 +427,8 @@ button:focus, input:focus {
     width: 80%;
   }
 }
+
+
+.ant-spin-container>div{
+  justify-content: center;
+}
