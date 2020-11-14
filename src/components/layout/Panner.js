@@ -6,13 +6,13 @@ const Panner = (props) => {
   const [size, setSize] = useState(window.innerWidth >= 750);
   useEffect(() => {
     window.addEventListener('resize', () => {
-      if (window.innerWidth >= 750 !== size) {
+      if ((window.innerWidth >= 750) !== size) {
         setSize(!size);
       }
     });
     return () => {
       window.removeEventListener('resize', () => {
-        if (window.innerWidth >= 750 !== size) {
+        if ((window.innerWidth >= 750) !== size) {
           setSize(!size);
         }
       });
@@ -43,7 +43,6 @@ const Panner = (props) => {
           </div>
         )}
       </Carousel>
-      {size ? (
         <>
           <Button
             danger
@@ -62,7 +61,6 @@ const Panner = (props) => {
             onClick={onNext}
           />
         </>
-      ) : null}
     </div>
   );
 };
