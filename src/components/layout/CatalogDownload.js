@@ -19,6 +19,7 @@ const CatalogDownload = () => {
             <div style={{ fontSize: '24px' }}>
               Download<strong> our Profile</strong>
             </div>
+            <a href="https://drive.google.com/file/d/19IjeWXcOCno1qKKdj-dddtBkEANGXx5C/view" target="blank">
             <button
               className="custom-button active noselect"
               style={{
@@ -31,6 +32,7 @@ const CatalogDownload = () => {
             >
               Download now <DownloadOutlined />
             </button>
+            </a>
           </Col>
           <Col xs={20} lg={12}>
             <Image src="/logo-1.jpg" width="100%" />

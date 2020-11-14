@@ -28,9 +28,12 @@
 }
 .header-contact-link {
   margin: 5px;
+  height: 40px;
+  width:  180px;
 }
 .header-language {
   height: 32px;
+  
   /* width: ; */
 }
 /* .header-navbar .ant-menu-submenu-selected > a,
