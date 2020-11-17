@@ -81,7 +81,7 @@ const Navbar = () => {
       <Row style={style.navbarMenu} justify="space-between">
         <Col xs={6} lg={6} className="logo">
           <Link to="/">
-            <img src="/logo-main.png" />
+            <img width="auto" height="60px" src="/logo-ttglobal.jpg" />
           </Link>
         </Col>
         <Col xs={6} lg={12}>

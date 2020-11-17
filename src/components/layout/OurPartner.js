@@ -6,11 +6,14 @@ const OurPartner = () => {
   let style = {
     img: {
       margin: "auto",
-      width: "70%"
+      width: "70%",
+      maxWidth: "150px"
     },
     panner: {
       // height: '120px',
-      minHeight: '120px'
+      minHeight: '120px',
+      display: 'flex',
+      alignItems: 'center'
       // margin: 'auto'
     }
   };

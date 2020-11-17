@@ -445,3 +445,7 @@ button:focus, input:focus {
 .ant-spin-container>div{
   justify-content: center;
 }
+.slick-track{
+  display: flex!important;
+  align-items: center;
+}

@@ -7,6 +7,7 @@ import Panner from '../layout/Panner';
 import { Row, Col, Modal } from 'antd';
 import { ProductContext } from '../ProductContext';
 import _ from 'lodash';
+import OurPartner from '../layout/OurPartner';
 
 const { TabPane } = Tabs;
 const { SubMenu } = Menu;
@@ -223,7 +224,8 @@ const ProductDetail = () => {
           <List data={products.filter((p) => p.id !== productId)} hover={size}></List>
         </div>
       </div>
-      <div style={{ position: 'relative', marginTop: '20px' }}>
+      <OurPartner/>
+      {/* <div style={{ position: 'relative', marginTop: '20px' }}>
         <div className="product_detail_header__b header_middle">
           Our <strong>Partners</strong>
         </div>
@@ -234,11 +236,11 @@ const ProductDetail = () => {
         />
         <div style={{ padding: '30px' }}>
           <Panner>
-            <Image src="/logo-partner.png" width={100} />
-            <Image src="/logo-partner.png" width={100} />
+            <Image src="/logo-main.png" width={100} />
+            <Image src="/logo-1.jpg" width={100} />
           </Panner>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
