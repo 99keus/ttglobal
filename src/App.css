@@ -236,6 +236,16 @@ button:focus, input:focus {
 }
 .item {
   margin: 10px;
+  display: inline-block;
+  position: relative;
+}
+
+.ant-modal {
+  width: 90vmin !important;
+}
+
+.ant-modal-body {
+  padding: 0;
 }
 
 .ant-tabs-ink-bar {
