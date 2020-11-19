@@ -1,37 +1,47 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
+import { Tabs, Image, Menu, Carousel, Row, Col, Modal } from 'antd';
+import { RightOutlined, LeftOutlined } from '@ant-design/icons';
+import { ProductContext } from '../ProductContext';
+import {Button as AButton} from 'antd';
 import { useParams } from 'react-router-dom';
 import Button from '../layout/Button';
 import List from '../layout/List';
-import { Tabs, Image, Menu, Carousel } from 'antd';
 import Panner from '../layout/Panner';
-import { Row, Col, Modal } from 'antd';
-import { ProductContext } from '../ProductContext';
-import _ from 'lodash';
 import OurPartner from '../layout/OurPartner';
+import _ from 'lodash';
 
 const { TabPane } = Tabs;
-const { SubMenu } = Menu;
+const { SubMenu, Item } = Menu;
+const TITLES = [
+  'WIDTH & LENGTH',
+  'THICKNESS (SINGLE WALL)',
+  'PHYSICAL PROPERTIES',
+  'QUALITY ASSURANCE',
+]
 
 const ProductDetail = () => {
   const products = useContext(ProductContext);
-  const [tab, setTab] = useState('nitrile');
-  const [size, setSize] = useState(window.innerWidth >= 750);
-  const [visible, setVisible] = useState(false);
-  const [currentCarousel, setCurrentCarousel] = useState([]);
-  let { id: productId } = useParams();
   const refCarousel = useRef(null);
-  const { title, description, thumbnail, image } = products.find((p) => p.id === productId) || {};
+  const { id } = useParams();
+  const [state, setState] = useState({
+    tab: 'nitrile',
+    size: window.innerWidth >=750,
+    visible: false,
+    carou: [],
+  });
+  const { title, description, thumbnail, image } = products.find((p) => p.id === id) || {};
+  const { tab, size, visible, carou } = state;
 
   useEffect(() => {
     window.addEventListener('resize', () => {
       if ((window.innerWidth >= 750) !== size) {
-        setSize(!size);
+        setState(state => ({...state, size: !size}));
       }
     });
     return () => {
       window.removeEventListener('resize', () => {
         if ((window.innerWidth >= 750) !== size) {
-          setSize(!size);
+          setState(state => ({...state, size: !size}));
         }
       });
     };
@@ -40,49 +50,53 @@ const ProductDetail = () => {
   const onNext = () => {
     refCarousel.current.next();
   };
+
   const onPrevious = () => {
     refCarousel.current.prev();
   };
 
   const openPopup = (arr, index) => {
+    setState(state => ({...state, visible: true}));
     const images = [...arr.slice(index), ...arr.slice(0, index)];
-    setVisible(true);
-    document.addEventListener("keyup", function(event) {
+    if (size) {
+      setState(state => ({...state, carou: images}));
+    } else {
+      setState(state => ({...state, carou: tab === 'nitrile' ? [...image.nitrile] : [...image.latex]}));
+    }
+    document.addEventListener('keyup', function (event) {
       if (event.key === 'ArrowRight') {
         onNext();
       } else if (event.key === 'ArrowLeft') {
         onPrevious();
       }
     });
-    setCurrentCarousel(images);
   };
 
   const closePopup = () => {
-    setVisible(false);
-    document.removeEventListener("keyup", function(event) {
+    setState(state => ({...state, visible: false, carou: []}));
+    document.removeEventListener('keyup', function (event) {
       if (event.key === 'ArrowRight') {
         onNext();
       } else if (event.key === 'ArrowLeft') {
         onPrevious();
       }
     });
-  }
+  };
 
   const chunk = (images) => {
     return _.chunk(images, size ? 4 : 1).map((g, index) => {
       return (
         <div key={index}>
-          {g.map((i, index, arr) => {
+          {g.map((i, index) => {
             return (
               <img
-                onClick={() => openPopup(arr, index)}
+                onClick={() => openPopup(g, index)}
                 key={index}
                 src={i}
                 width={260}
                 height={224}
-                className="item"
                 alt={index}
-                style={{ display: 'inline-block' }}
+                style={{ display: 'inline-block', margin: '15px' }}
               />
             );
           })}
@@ -90,11 +104,14 @@ const ProductDetail = () => {
       );
     });
   };
+
   const handleOnChange = (e) => {
     if (e !== tab) {
-      setTab(e);
+      setState({...state, tab: e});
     }
   };
+
+
   return (
     <div>
       <Row>
@@ -136,20 +153,35 @@ const ProductDetail = () => {
               footer={null}
               closable={false}
               centered={true}
+              style={{width: '100%'}}
             >
-              <Carousel ref={refCarousel}>{
-                currentCarousel.map((i, index)=> {
-                return (
-                  <img
-                  key={index}
-                  src={i}
-                  alt={index}
-                  style={{ display: 'inline-block' }}
-                  />
-                );
-              })}
+              <Carousel dots={false} ref={refCarousel}>
+                {carou.map((i, index) => {
+                  return (
+                    <img key={index} src={i} alt={index} style={{ display: 'inline-block' }} />
+                  );
+                })}
               </Carousel>
-              
+              <>
+                <AButton
+                  danger
+                  type="primary"
+                  shape="circle"
+                  icon={<LeftOutlined />}
+                  size={size ? 'large' : 'middle'}
+                  style={{ position: 'absolute', top: '0', bottom: '0', marginTop: 'auto', marginBottom: 'auto', left: size ? '-10%' : '5%' }}
+                  onClick={onPrevious}
+                  />
+                <AButton
+                  danger
+                  type="primary"
+                  shape="circle"
+                  icon={<RightOutlined />}
+                  size={size ? 'large' : 'middle'}
+                  style={{ position: 'absolute', top: '0', bottom: '0', marginTop: 'auto', marginBottom: 'auto', right: size ? '-10%' : '5%' }}
+                  onClick={onNext}
+                />
+              </>
             </Modal>
           </div>
         </Col>
@@ -165,53 +197,17 @@ const ProductDetail = () => {
             </TabPane>
           </Tabs>
           <div className="product_detail_header header_middle mt-3 mb-3">Product details</div>
-          {tab === 'nitrile' ? (
-            <Menu theme="light" style={{ width: '100%' }} mode="inline">
-              <SubMenu key="sub1" title="WIDTH & LENGTH" className="custom-submenu">
-                <Menu.Item key="1" style={{ height: '100%', padding: '30px' }}>
-                  <Image width="100%" src={image.nitrileDetail[0]} />
-                </Menu.Item>
-              </SubMenu>
-              <SubMenu key="sub2" title="THICKNESS (SINGLE WALL)" className="custom-submenu">
-                <Menu.Item key="2" style={{ height: '100%', padding: '30px' }}>
-                  <Image width="100%" src={image.nitrileDetail[1]} />
-                </Menu.Item>
-              </SubMenu>
-              <SubMenu key="sub3" title="PHYSICAL PROPERTIES" className="custom-submenu">
-                <Menu.Item key="3" style={{ height: '100%', padding: '30px' }}>
-                  <Image width="100%" src={image.nitrileDetail[2]} />
-                </Menu.Item>
-              </SubMenu>
-              <SubMenu key="sub4" title="QUALITY ASSURANCE" className="custom-submenu">
-                <Menu.Item key="4" style={{ height: '100%', padding: '30px' }}>
-                  <Image width="100%" src={image.nitrileDetail[3]} />
-                </Menu.Item>
-              </SubMenu>
-            </Menu>
-          ) : (
-            <Menu theme="light" style={{ width: '100%' }} mode="inline">
-              <SubMenu key="sub1" title="WIDTH & LENGTH" className="custom-submenu">
-                <Menu.Item key="1" style={{ height: '100%', padding: '30px' }}>
-                  <Image width="100%" src={image.latexDetail[0]} />
-                </Menu.Item>
-              </SubMenu>
-              <SubMenu key="sub2" title="THICKNESS (SINGLE WALL)" className="custom-submenu">
-                <Menu.Item key="2" style={{ height: '100%', padding: '30px' }}>
-                  <Image width="100%" src={image.latexDetail[1]} />
-                </Menu.Item>
-              </SubMenu>
-              <SubMenu key="sub3" title="PHYSICAL PROPERTIES" className="custom-submenu">
-                <Menu.Item key="3" style={{ height: '100%', padding: '30px' }}>
-                  <Image width="100%" src={image.latexDetail[2]} />
-                </Menu.Item>
-              </SubMenu>
-              <SubMenu key="sub4" title="QUALITY ASSURANCE" className="custom-submenu">
-                <Menu.Item key="4" style={{ height: '100%', padding: '30px' }}>
-                  <Image width="100%" src={image.latexDetail[3]} />
-                </Menu.Item>
-              </SubMenu>
-            </Menu>
-          )}
+          <Menu theme="light" style={{ width: '100%' }} mode="inline">
+            {
+              TITLES.map((v, i) => (
+                <SubMenu key={`sub${i}`} title={v} className="custom-submenu">
+                  <Item key={i} style={{ height: '100%', padding: '30px' }}>
+                    <Image width="100%" src={tab === 'nitrile' ? image.nitrileDetail[i] : image.latexDetail[i]} />
+                  </Item>
+                </SubMenu>
+              ))
+            }
+          </Menu>
         </div>
       ) : null}
       <div style={{ width: '85%', margin: 'auto' }}>
@@ -221,26 +217,10 @@ const ProductDetail = () => {
           Other <strong>Products</strong>
         </div>
         <div className="mt-3">
-          <List data={products.filter((p) => p.id !== productId)} hover={size}></List>
+          <List data={products.filter((p) => p.id !== id)} hover={size}></List>
         </div>
       </div>
-      <OurPartner/>
-      {/* <div style={{ position: 'relative', marginTop: '20px' }}>
-        <div className="product_detail_header__b header_middle">
-          Our <strong>Partners</strong>
-        </div>
-        <img
-          src="/logo-circle.png"
-          style={{ position: 'absolute', top: 0, height: '100%', right: 0 }}
-          alt=""
-        />
-        <div style={{ padding: '30px' }}>
-          <Panner>
-            <Image src="/logo-main.png" width={100} />
-            <Image src="/logo-1.jpg" width={100} />
-          </Panner>
-        </div>
-      </div> */}
+      <OurPartner />
     </div>
   );
 };

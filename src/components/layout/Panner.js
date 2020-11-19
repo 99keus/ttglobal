@@ -49,7 +49,7 @@ const Panner = (props) => {
             type="primary"
             shape="circle"
             icon={<LeftOutlined />}
-            style={{ position: 'absolute', top: '50%', left: '5%' }}
+            style={{ position: 'absolute', top: '0', bottom: '0', marginTop: 'auto', marginBottom: 'auto', left: '5%' }}
             onClick={onPrevious}
           />
           <Button
@@ -57,7 +57,7 @@ const Panner = (props) => {
             type="primary"
             shape="circle"
             icon={<RightOutlined />}
-            style={{ position: 'absolute', top: '50%', right: '5%' }}
+            style={{ position: 'absolute', top: '0', bottom: '0', marginTop: 'auto', marginBottom: 'auto', right: '5%' }}
             onClick={onNext}
           />
         </>

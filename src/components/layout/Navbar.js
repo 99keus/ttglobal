@@ -19,7 +19,6 @@ const Navbar = () => {
   const [fullNavbar, setFullNavbar] = useState(false);
   
   const location = useLocation();
-  console.log("react-router-dom", location.pathname);
 
   useEffect(() => {
     if(location.pathname == "/"){
@@ -41,8 +40,6 @@ const Navbar = () => {
     navbarInfo: fullNavbar ? "": {display: 'none'},
     navbarMenu: fullNavbar ? {padding: '25px 5vw'} : {padding: '0 5vw'},
   };
-
-  console.log("wtf", fullNavbar, location.pathname == "/");
 
   return (
     <Header style={style.header}>
