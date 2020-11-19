@@ -26,7 +26,7 @@ const Footer = () => {
           </Link>
           <Row>
           <Col span={10}>
-            <Link className="footer-link" to="/product/1">Kyo</Link><br/>
+            <Link className="footer-link" to="/product/1">KyO Gloves</Link><br/>
             <Link className="footer-link" to="/product/2">Mask N95</Link><br/>
           </Col>
           <Col span={14}>
