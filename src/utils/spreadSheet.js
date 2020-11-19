@@ -27,7 +27,6 @@ export const addRow = async (row) => {
 
     const rows = await sheet.getRows(); // can pass in { limit, offset }
 
-    console.log("rows", rows); // 'Larry Page'
     // rows[1].email = 'sergey@abc.xyz'; // update a value
     // await rows[1].save(); // save updates
     // await rows[1].delete(); // delete a row

@@ -35,7 +35,6 @@ const Career = () => {
   const onSubmit = data => {
     addInfoCareer([data]);
     form.resetFields();
-    // console.log('Success:', data);
   };
 
   return (

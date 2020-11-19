@@ -234,11 +234,6 @@ button:focus, input:focus {
 .custom-container-tab {
   display: flex;
 }
-.item {
-  margin: 10px;
-  display: inline-block;
-  position: relative;
-}
 
 .ant-modal {
   width: 90vmin !important;

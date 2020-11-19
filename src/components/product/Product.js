@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import { Image, Divider } from 'antd';
-import Panner from '../layout/Panner';
+import { Divider } from 'antd';
 import List from '../layout/List';
 import { ProductContext } from '../ProductContext';
 import OurPartner from '../layout/OurPartner';

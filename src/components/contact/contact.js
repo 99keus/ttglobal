@@ -31,7 +31,6 @@ const Contact = () => {
   const onSubmit = data => {
     addInfoContact([data]);
     form.resetFields();
-    // console.log('Success:', data);
   };
 
   return(

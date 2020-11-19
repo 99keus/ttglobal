@@ -19,7 +19,6 @@ const Navbar = () => {
   const [fullNavbar, setFullNavbar] = useState(false);
   
   const location = useLocation();
-  console.log("react-router-dom", location.pathname);
 
   useEffect(() => {
     if(location.pathname == "/"){

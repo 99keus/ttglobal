@@ -24,7 +24,6 @@ const Provider = ( {children} ) => {
         short_desc: row.short_desc
       };
     });
-    console.log(productsRaw);
     setProducts(productsRaw);
   };
 
