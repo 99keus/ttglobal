@@ -27,7 +27,7 @@ const Navbar = () => {
     }else{
       setFullNavbar(false);
     }
-  }, [fullNavbar])
+  }, [location])
 
   const style = {
     header: {
@@ -42,8 +42,6 @@ const Navbar = () => {
     navbarMenu: fullNavbar ? {padding: '25px 5vw'} : {padding: '0 5vw'},
   };
 
-  console.log("wtf", fullNavbar, location.pathname == "/");
-
   return (
     <Header style={style.header}>
     <div className="header">
@@ -56,15 +54,6 @@ const Navbar = () => {
         <Col span={12} className="header-top-right">
           <Row>
             <Col span={10}>
-              {/* <Row>
-              <Col span={6}>
-              <img src="/header-icon-contact.png" alt="contact" />
-              </Col>
-              <Col span={18}>
-                <p>Contact Support</p>
-                <a href="#">vpdd.ttglobal@gmail.com</a>
-              </Col>
-            </Row> */}
               <img className="header-contact-link" src="/header-contact-1.png" alt="header-contact" />
             </Col>
             <Col span={8}>

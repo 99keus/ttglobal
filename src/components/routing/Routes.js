@@ -28,7 +28,6 @@ const Routes = () => {
           <Route exact path='/disclaimer' component={Disclaimer}/>   
           <Route exact path='/privacy' component={Privacy}/>   
           <Route exact path='/quality-assurance' component={QualityAssurance}/>   
-          {/* <Route exact path='/products' component={} /> */}
           {/* <Route component={NotFound} /> */}
         </Switch>
       </section>

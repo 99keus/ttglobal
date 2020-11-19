@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Provider from './components/ProductContext'
 import Navbar from './components/layout/Navbar';
@@ -10,10 +10,7 @@ import 'antd/dist/antd.css';
 import './App.css';
 import 'swiper/swiper-bundle.css';
 
-// import { Provider } from 'react-redux';
-// import { loadProducts } from './actions/product';
-
-const { Header, Content } = Layout;
+const { Content } = Layout;
 
 
 const App = () => {
@@ -29,8 +26,6 @@ const App = () => {
             </Switch>
           </Content>
           <Footer/>
-            {/* <FooterBar/> */}
-          {/* </Footer> */}
         </Layout>
       </Router>
     </Provider>
