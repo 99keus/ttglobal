@@ -16,12 +16,11 @@ const Home = () => {
   const style = {
     divider: {
       red: {
-        color: '#DA3849',
-        backgroundColor: 'red',
-        height: '2px',
-        width: '300px',
-        margin: '10px auto',
-        minWidth: '50px'
+        color: 'rgb(234 234 234)',
+        backgroundColor: 'rgb(234 234 234)',
+        height: '1px',
+        width: '100%',
+        minWidth: '50px',
       }
     }
   }

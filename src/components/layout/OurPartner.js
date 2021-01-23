@@ -34,8 +34,7 @@ const OurPartner = () => {
       </div>
       <div style={style.panner}>
         <Panner style={{minHeight: '120px'}}>
-          <Image src="/logo-main.png" style={style.img} />
-          <Image src="/logo-1.jpg" style={style.img} />
+          <Image src="/images/partner1.png" style={style.img} />
         </Panner>
       </div>
     </Fragment>

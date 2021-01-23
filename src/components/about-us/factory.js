@@ -9,7 +9,7 @@ import {Swiper, SwiperSlide } from 'swiper/react';
 
 const style= {
   root: {
-    padding: '0 10vw 0 10vw'
+    padding: '0 24px 0 24px'
   },
   text: {
     root: {

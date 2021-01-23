@@ -3,16 +3,15 @@ import React from 'react';
 
 const NewsLetter = () => {
   return(
-<Row justify="center">
-  <Col xs={20} lg={18} justify="center">
+<Row justify="center" margin="100px">
+  <Col xs={20} lg={18} justify="center" margin="24px">
     <Row>
       <p
         style={{
-          width: '80%',
+          width: '100%',
           fontSize: '24px',
           color: '#da3849',
           fontWeight: 'bold',
-          margin: '25px 0 20px',
         }}
       >
         Get our newsletter for T&T Global
@@ -25,12 +24,11 @@ const NewsLetter = () => {
         placeholder="Name"
         style={{
           width: '100%',
-          height: '45px',
-          margin: '10px 0',
+          height: '44px',
           border: '1px solid #ccc',
-          borderRadius: '10px',
+          borderRadius: '8px',
           background: '#ccc',
-          padding: '20px'
+          padding: '24px'
         }}
       />
     </Col>
@@ -40,10 +38,10 @@ const NewsLetter = () => {
         placeholder="Email"
         style={{
           width: '100%',
-          height: '45px',
-          margin: '10px 0',
+          height: '44px',
+          margin: '12px 0',
           border: '1px solid #ccc',
-          borderRadius: '10px',
+          borderRadius: '8px',
           background: '#ccc',
           padding: '20px'
         }}

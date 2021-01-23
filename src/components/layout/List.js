@@ -7,7 +7,7 @@ const style = {
   card: {
     width: '100%',
     textAlign: 'center',
-    boxShadow: '0 5px 10px 0 rgba(0,0,0,0.2),0 6px 12px 0 rgba(0,0,0,0.19)',
+    boxShadow: 'none',
   }
 }
 
@@ -38,14 +38,14 @@ const AList = ({ data, hover }) => {
                     style={{
                       backgroundImage: `url(${thumbnail})`,
                       width: '100%',
-                      height: '214px',
+                      height: '216px',
                       backgroundSize: 'cover',
                       backgroundRepeat: 'no-repeat',
                       backgroundPosition: 'center',
                     }}
                   ></div>
                 ) : (
-                  <div className="unavailable-image" style={{ height: '214px' }}>
+                  <div className="unavailable-image" style={{ height: '216px' }}>
                     <div className="unavailable-image-blur">
                       This product is temporarily unavailable
                     </div>
@@ -71,7 +71,7 @@ const AList = ({ data, hover }) => {
                 <div style={{ textAlign: 'start' }}>{short_desc}</div>
               </div>
               <Link to={`/product/${id}`}>
-                <Button width={'70%'} height={35} borderRadius={30}>
+                <Button width={'70%'} height={40} borderRadius={30}>
                   Learn more
                 </Button>{' '}
               </Link>

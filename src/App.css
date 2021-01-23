@@ -63,10 +63,10 @@
   color: #e0e0e0;
   font-size: 12px;
   line-height: 32px;
-  padding: 25px 5vw 15px 5vw;
+  padding: 40px 5vw 40px 5vw;
 }
 .footer-title{
-  font-size: 22px;
+  font-size: 24px;
   color: #FFFFFF;
 }
 .footer-link {
@@ -102,8 +102,12 @@
   padding: 0;
 }
 .ant-menu{
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
+}
+.ant-divider .ant-divider-horizontal{
+  height: 1px !important;
+  background-color: rgb(234 234 234) !important;
 }
 
 .logo {
@@ -131,17 +135,18 @@
 
 .custom-submenu {
   color: #4f4f4f;
-  font-size: 25px;
+  font-size: 20px;
   background-color: #f9f9f9;
 }
 
 .container-tab-nav .ant-menu-submenu-title {
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  margin: 0px;
 }
 
 .container-tab-nav .ant-menu-submenu-title:hover {
   color: #da3849;
   font-size: 20px;
+  margin: 0px;
 }
 
 .custom-table {
@@ -160,9 +165,10 @@ th .ant-table-cell {
 }
 
 .container-tab-nav .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
-  height: 70px;
+  height: 72px;
   font-size: 2.3vh;
   padding: 20px 7.5% !important;
+  margin:0px;
 }
 
 .container-tab-nav .ant-menu {
@@ -196,11 +202,11 @@ button:focus, input:focus {
 
 .ant-tabs-tab {
   width: 50%;
-  height: 8vh;
+  height: 6vh;
   display: flex;
   justify-content: center;
   margin-right: 0;
-  font-size : 25px;
+  font-size : 20px;
   color: white;
   font-weight: bold;
 }
@@ -311,8 +317,8 @@ button:focus, input:focus {
   display: block;
   display: -webkit-box;
   font-size: 16px;
-  line-height: 20px;
-  margin-bottom: 40px;
+  line-height: 24px;
+  margin-bottom: px;
   height: 240px;
   -webkit-line-clamp: 9;
   -webkit-box-orient: vertical;
@@ -322,9 +328,10 @@ button:focus, input:focus {
 }
 
 .product_description_container__detail {
-  padding: 30px 45px;
+  display: grid;
+  gap: 0px;
+  padding: 24px 48px;
   position: relative;
-  height: 60vh;
   min-height: 440px;
 }
 
@@ -340,6 +347,7 @@ button:focus, input:focus {
 
 .image-thumbnail .ant-image-img {
   object-fit: cover;
+  border-radius: 4px;
 }
 
 .product_description_title__detail {
@@ -404,12 +412,20 @@ button:focus, input:focus {
   justify-content: center;
   align-items: center;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 16px;
+  line-height: 32px;
 }
 
 .custom-card {
-  transition: all 0.2s ease-in-out;
+  box-shadow: none;
+  transition: all 0.5s ease-in-out;
+
+}
+.custom-card :hover{
+  box-shadow: '0 5px 10px 0 rgba(0,0,0,0.2),0 6px 12px 0 rgba(0,0,0,0.19)'
+}
+.ant-card{
+  box-shadow: none;
 }
 
 .large.custom-card:hover {

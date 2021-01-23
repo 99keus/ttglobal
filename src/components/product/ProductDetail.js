@@ -93,10 +93,10 @@ const ProductDetail = () => {
                 onClick={() => openPopup(g, index)}
                 key={index}
                 src={i}
-                width={260}
-                height={224}
+                width={320}
+                height={240}
                 alt={index}
-                style={{ display: 'inline-block', margin: '15px' }}
+                style={{ display: 'inline-block', margin: '12px' }}
               />
             );
           })}
@@ -138,7 +138,7 @@ const ProductDetail = () => {
             <div className="product_description_content__detail">
               <p>{description}</p>
             </div>
-            <div style={{ position: 'absolute', bottom: '40px', left: '60px' }}>
+            <div style={{ position: 'flex', bottom: '40px'}}>
               {image ? (
                 <Button height={40} borderRadius={10} fontSize={'1rem'} fontWeight="bold">
                   Contact us

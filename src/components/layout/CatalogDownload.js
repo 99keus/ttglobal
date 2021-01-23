@@ -9,9 +9,10 @@ const CatalogDownload = () => {
       <Col xs={20} lg={18}
         style={{
           margin: 'auto',
-          border: '2px solid #da3849',
+          border: '1.25px solid #da3849',
           padding: '20px 30px',
           borderRadius: '10px',
+          margin: '24px',
         }}
       >
         <Row justify="space-betwwen">
